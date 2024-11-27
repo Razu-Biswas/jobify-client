@@ -32,9 +32,8 @@ const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const Registration = () => {
-  const [bloodGroup, setBloodGroup] = useState("");
-  const [districts, disLoading] = useDistricts();
-  const [upazilas, upLoading] = useUpazilas();
+  
+
   const { register, handleSubmit, reset } = useForm();
   const axiosPublic = useAxiosPublic();
   const { createUser, updateUser } = useContext(AuthContext);
@@ -104,19 +103,19 @@ const Registration = () => {
     setPassError("");
   };
 
-  if (disLoading || upLoading)
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-        }}
-      >
-        <CircularProgress sx={{ color: "rgba(220, 20, 60, 1)" }} />
-      </div>
-    );
+  // if (upLoading)
+  //   return (
+  //     <div
+  //       style={{
+  //         display: "flex",
+  //         justifyContent: "center",
+  //         alignItems: "center",
+  //         height: "100vh",
+  //       }}
+  //     >
+  //       <CircularProgress sx={{ color: "rgba(220, 20, 60, 1)" }} />
+  //     </div>
+  //   );
 
   const handleChange = (event) => {
     setBloodGroup(event.target.value);

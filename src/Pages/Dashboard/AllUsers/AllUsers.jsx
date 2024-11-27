@@ -279,7 +279,7 @@ const AllUsers = () => {
                                 Make Admin
                               </Button>
                             </>
-                          ) : user.role === "volunteer" ? (
+                          ) : user.role === "admin" ? (
                             <Button
                               onClick={() =>
                                 handleUpdateRole(user, "superAdmin")
@@ -353,7 +353,7 @@ const AllUsers = () => {
                               Activate
                             </Button>
                           )}
-                          {user.role === "donor" ? (
+                          {user.role === "user" ? (
                             <>
                               <Button
                                 onClick={() =>
@@ -371,10 +371,10 @@ const AllUsers = () => {
                                 color="warning"
                                 variant="contained"
                               >
-                                Make Volunteer
+                                Make Admin
                               </Button>
                             </>
-                          ) : user.role === "volunteer" ? (
+                          ) : user.role === "admin" ? (
                             <Button
                               onClick={() =>
                                 handleUpdateRole(user, "superAdmin")

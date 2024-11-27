@@ -24,15 +24,13 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 
 const UpdateProfile = () => {
   const [user, userLoading] = useUserProfile();
-  const [districts, disLoading] = useDistricts();
-  const [upazilas, upLoading] = useUpazilas();
   const { register, handleSubmit, reset } = useForm();
   const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
   const { updateUser } = useContext(AuthContext);
 
-  if (userLoading || disLoading || upLoading)
+  if (userLoading)
     return (
       <div
         style={{
@@ -47,7 +45,6 @@ const UpdateProfile = () => {
     );
 
   const onSubmit = async (data) => {
-    console.log(data);
     const imageFile = { image: data.image[0] };
     const imgRes = await axiosPublic.post(image_hosting_api, imageFile, {
       headers: {
@@ -66,7 +63,7 @@ const UpdateProfile = () => {
         `/api/v1/updateUser/${user.email}`,
         userInfo
       );
-      console.log(res.data);
+
       if (res.data.modifiedCount) {
         updateUser(userInfo.name, userInfo.image)
           .then(() => {
