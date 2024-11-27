@@ -1,0 +1,11 @@
+.watch-field {
+  position: relative;
+  width: 100%;
+}
+
+.watch-icon {
+    position: absolute;
+    top: 40%;
+    right: 0;
+  cursor: pointer;
+}

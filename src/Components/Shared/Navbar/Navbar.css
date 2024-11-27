@@ -1,0 +1,26 @@
+.active {
+  color: rgba(220, 20, 60, 1) !important;
+  font-weight: 600;
+}
+.menu {
+  text-decoration: none;
+  position: relative;
+  color: black;
+}
+.menu::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  color: rgba(220, 20, 60, 1);
+  background-color: rgba(220, 20, 60, 1); /* Secondary color for the border */
+  transition: width 0.3s ease-in-out;
+}
+
+.menu:hover::after {
+  width: 100%;
+  color: rgba(220, 20, 60, 1);
+  transition: width 0.3s ease-in-out;
+}

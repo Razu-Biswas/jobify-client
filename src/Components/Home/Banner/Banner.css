@@ -1,0 +1,28 @@
+.banner-container {
+  min-height: 700px;
+  position: relative;
+  width: 100%;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url('../../../assets/home_banner.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: fixed;
+  background-position: center;
+}
+/* .banner-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+} */
+
+.banner-content{
+    display: flex;
+   
+    min-height: 100%;
+}
